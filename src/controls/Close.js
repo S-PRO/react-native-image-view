@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, Platform} from 'react-native';
 
 const HIT_SLOP = {top: 15, left: 15, right: 15, bottom: 15};
 
@@ -17,7 +17,9 @@ const styles = StyleSheet.create({
         marginRight: 15,
     },
     closeButton__text: {
+        marginTop: Platform.OS === "android" ? 2 : 0,
         backgroundColor: 'transparent',
+        alignSelf: "center",
         fontSize: 25,
         lineHeight: 25,
         color: '#FFF',
